@@ -49,6 +49,8 @@
             this.gunaDragControl4 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaDragControl5 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.saveNotifyer = new System.Windows.Forms.NotifyIcon(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btnManualBackup = new Guna.UI.WinForms.GunaButton();
             this.savesPanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             this.SuspendLayout();
@@ -105,6 +107,7 @@
             // gamePanel
             // 
             this.gamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))));
+            this.gamePanel.Controls.Add(this.btnManualBackup);
             this.gamePanel.Controls.Add(this.gunaControlBox1);
             this.gamePanel.Controls.Add(this.cbClose);
             this.gamePanel.Controls.Add(this.btnDel);
@@ -165,7 +168,7 @@
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
             this.btnDel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnDel.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDel.Location = new System.Drawing.Point(481, 63);
+            this.btnDel.Location = new System.Drawing.Point(445, 63);
             this.btnDel.Name = "btnDel";
             this.btnDel.OnHoverBaseColor = System.Drawing.Color.Black;
             this.btnDel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -175,6 +178,7 @@
             this.btnDel.Radius = 2;
             this.btnDel.Size = new System.Drawing.Size(38, 30);
             this.btnDel.TabIndex = 4;
+            this.toolTip.SetToolTip(this.btnDel, "Delete game.");
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnEdit
@@ -191,7 +195,7 @@
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnEdit.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnEdit.Location = new System.Drawing.Point(437, 63);
+            this.btnEdit.Location = new System.Drawing.Point(401, 63);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnHoverBaseColor = System.Drawing.Color.Black;
             this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -201,6 +205,7 @@
             this.btnEdit.Radius = 2;
             this.btnEdit.Size = new System.Drawing.Size(38, 30);
             this.btnEdit.TabIndex = 3;
+            this.toolTip.SetToolTip(this.btnEdit, "Edit game.");
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
@@ -217,7 +222,7 @@
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnAdd.Location = new System.Drawing.Point(393, 63);
+            this.btnAdd.Location = new System.Drawing.Point(357, 63);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.Black;
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -227,6 +232,7 @@
             this.btnAdd.Radius = 2;
             this.btnAdd.Size = new System.Drawing.Size(38, 30);
             this.btnAdd.TabIndex = 2;
+            this.toolTip.SetToolTip(this.btnAdd, "Add game.");
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // flpMain
@@ -252,10 +258,11 @@
             this.txtSearch.Location = new System.Drawing.Point(547, 63);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.Radius = 10;
+            this.txtSearch.Radius = 5;
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(216, 30);
             this.txtSearch.TabIndex = 1;
+            this.toolTip.SetToolTip(this.txtSearch, "Type to Search.");
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // lblAllGames
@@ -296,6 +303,38 @@
             this.saveNotifyer.Visible = true;
             this.saveNotifyer.BalloonTipClicked += new System.EventHandler(this.saveNotifyer_BalloonTipClicked);
             this.saveNotifyer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.saveNotifyer_MouseDoubleClick);
+            // 
+            // toolTip
+            // 
+            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip.ToolTipTitle = "AutoSaver";
+            // 
+            // btnManualBackup
+            // 
+            this.btnManualBackup.AnimationHoverSpeed = 0.07F;
+            this.btnManualBackup.AnimationSpeed = 0.03F;
+            this.btnManualBackup.BackColor = System.Drawing.Color.Transparent;
+            this.btnManualBackup.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))));
+            this.btnManualBackup.BorderColor = System.Drawing.Color.Black;
+            this.btnManualBackup.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnManualBackup.FocusedColor = System.Drawing.Color.Empty;
+            this.btnManualBackup.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnManualBackup.ForeColor = System.Drawing.Color.White;
+            this.btnManualBackup.Image = ((System.Drawing.Image)(resources.GetObject("btnManualBackup.Image")));
+            this.btnManualBackup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnManualBackup.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnManualBackup.Location = new System.Drawing.Point(489, 63);
+            this.btnManualBackup.Name = "btnManualBackup";
+            this.btnManualBackup.OnHoverBaseColor = System.Drawing.Color.Black;
+            this.btnManualBackup.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnManualBackup.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnManualBackup.OnHoverImage = null;
+            this.btnManualBackup.OnPressedColor = System.Drawing.Color.Black;
+            this.btnManualBackup.Radius = 2;
+            this.btnManualBackup.Size = new System.Drawing.Size(38, 30);
+            this.btnManualBackup.TabIndex = 7;
+            this.toolTip.SetToolTip(this.btnManualBackup, "Manual save backup.");
+            this.btnManualBackup.Click += new System.EventHandler(this.btnManualBackup_Click);
             // 
             // AutoSaver
             // 
@@ -338,6 +377,8 @@
         private Guna.UI.WinForms.GunaDragControl gunaDragControl4;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl5;
         private System.Windows.Forms.NotifyIcon saveNotifyer;
+        private System.Windows.Forms.ToolTip toolTip;
+        private Guna.UI.WinForms.GunaButton btnManualBackup;
     }
 }
 

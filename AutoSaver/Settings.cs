@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,10 +41,17 @@ namespace AutoSaver
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+
             if (Directory.Exists(txtSettingPath.Text))
             {
                 misc.setAutoSaverPath("AutoSaver.ini", 0, txtSettingPath.Text);
-                MessageBox.Show(constants.autosaverrestartmsg);
+                if (startupSwitch.Checked == true)
+                {
+                    Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true).SetValue(Application.ProductName, Application.ExecutablePath);
+                } else
+                {
+                    Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true).DeleteValue(Application.ProductName);
+                }
                 Application.Restart();
             } else
             {
@@ -57,5 +65,7 @@ namespace AutoSaver
         {
              txtSettingPath.Text = misc.getAutoSaverPath("AutoSaver.ini", 0, 0);
         }
+
+
     }
 }

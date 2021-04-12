@@ -39,6 +39,8 @@
             this.btnBrowseSettingPath = new Guna.UI.WinForms.GunaButton();
             this.lblSettingPath = new Guna.UI.WinForms.GunaLabel();
             this.txtSettingPath = new Guna.UI.WinForms.GunaTextBox();
+            this.startupSwitch = new Guna.UI.WinForms.GunaWinSwitch();
+            this.lblStartup = new Guna.UI.WinForms.GunaLabel();
             this.navbarPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,7 +116,7 @@
             this.btnSubmit.Image = null;
             this.btnSubmit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSubmit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSubmit.Location = new System.Drawing.Point(277, 215);
+            this.btnSubmit.Location = new System.Drawing.Point(277, 231);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.OnHoverBaseColor = System.Drawing.Color.Black;
             this.btnSubmit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -142,7 +144,7 @@
             this.btnBrowseSettingPath.Image = ((System.Drawing.Image)(resources.GetObject("btnBrowseSettingPath.Image")));
             this.btnBrowseSettingPath.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnBrowseSettingPath.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnBrowseSettingPath.Location = new System.Drawing.Point(204, 215);
+            this.btnBrowseSettingPath.Location = new System.Drawing.Point(204, 231);
             this.btnBrowseSettingPath.Name = "btnBrowseSettingPath";
             this.btnBrowseSettingPath.OnHoverBaseColor = System.Drawing.Color.Black;
             this.btnBrowseSettingPath.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -159,7 +161,7 @@
             this.lblSettingPath.AutoSize = true;
             this.lblSettingPath.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettingPath.ForeColor = System.Drawing.Color.White;
-            this.lblSettingPath.Location = new System.Drawing.Point(24, 129);
+            this.lblSettingPath.Location = new System.Drawing.Point(24, 105);
             this.lblSettingPath.Name = "lblSettingPath";
             this.lblSettingPath.Size = new System.Drawing.Size(72, 15);
             this.lblSettingPath.TabIndex = 14;
@@ -177,7 +179,7 @@
             this.txtSettingPath.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSettingPath.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSettingPath.ForeColor = System.Drawing.Color.White;
-            this.txtSettingPath.Location = new System.Drawing.Point(25, 150);
+            this.txtSettingPath.Location = new System.Drawing.Point(25, 126);
             this.txtSettingPath.Name = "txtSettingPath";
             this.txtSettingPath.PasswordChar = '\0';
             this.txtSettingPath.Radius = 2;
@@ -185,12 +187,37 @@
             this.txtSettingPath.Size = new System.Drawing.Size(577, 30);
             this.txtSettingPath.TabIndex = 13;
             // 
+            // startupSwitch
+            // 
+            this.startupSwitch.BaseColor = System.Drawing.SystemColors.Control;
+            this.startupSwitch.CheckedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(94)))));
+            this.startupSwitch.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.startupSwitch.FillColor = System.Drawing.Color.White;
+            this.startupSwitch.Location = new System.Drawing.Point(129, 175);
+            this.startupSwitch.Name = "startupSwitch";
+            this.startupSwitch.Size = new System.Drawing.Size(40, 22);
+            this.startupSwitch.TabIndex = 17;
+
+            // 
+            // lblStartup
+            // 
+            this.lblStartup.AutoSize = true;
+            this.lblStartup.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartup.ForeColor = System.Drawing.Color.White;
+            this.lblStartup.Location = new System.Drawing.Point(24, 175);
+            this.lblStartup.Name = "lblStartup";
+            this.lblStartup.Size = new System.Drawing.Size(100, 17);
+            this.lblStartup.TabIndex = 18;
+            this.lblStartup.Text = "Run on startup";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(628, 324);
+            this.Controls.Add(this.lblStartup);
+            this.Controls.Add(this.startupSwitch);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnBrowseSettingPath);
             this.Controls.Add(this.lblSettingPath);
@@ -219,5 +246,7 @@
         private Guna.UI.WinForms.GunaButton btnBrowseSettingPath;
         private Guna.UI.WinForms.GunaLabel lblSettingPath;
         private Guna.UI.WinForms.GunaTextBox txtSettingPath;
+        private Guna.UI.WinForms.GunaWinSwitch startupSwitch;
+        private Guna.UI.WinForms.GunaLabel lblStartup;
     }
 }

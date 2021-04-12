@@ -124,12 +124,60 @@ namespace AutoSaver
 
         }
 
+
+        private void btnManualBackup_Click(object sender, EventArgs e)
+        {
+            if (currentGame != string.Empty)
+            {
+                ArrayList gameList = db.getDataFromDatabase("SELECT * FROM games WHERE id = "+currentGame);
+
+                foreach (DataRow item in gameList)
+                {
+
+                    string game = item[3].ToString();
+                    int index = game.LastIndexOf(@"\");
+                    game = game.Substring(index + 1);
+
+                        string dest = constants.autosaverpath + @"\" + item[1].ToString() + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss");
+                        DirectoryInfo di = Directory.CreateDirectory(dest);
+
+                        string root = item[4].ToString();
+
+                        misc.CloneDirectory(root, dest);
+
+                        List<KeyValuePair<string, string>> save = new List<KeyValuePair<string, string>>();
+                        List<Saves> saveObject = new List<Saves>
+            {
+                new Saves() {game_id = item[0].ToString(), path = dest, datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm")}
+            };
+
+                        foreach (var data in saveObject)
+                        {
+
+                            save.Clear();
+                            foreach (var savedata in data.GetType().GetProperties())
+                            {
+                                save.Add(new KeyValuePair<string, string>(savedata.Name, savedata.GetValue(data).ToString()));
+                            }
+                        }
+
+                        db.insertToDatabase(save, "saves");
+                        saveNotifyer.Tag = dest;
+                        saveNotifyer.ShowBalloonTip(1, "AutoSaver", game + " save backup!", ToolTipIcon.Info);
+
+                    
+
+                }
+            }
+            loadSavesThread(currentGame);
+        }
+
         private void loadGames()
         {
 
             misc.clearFlp<gameHead>(flpMain);
 
-            ArrayList gameList = db.getDataFromDatabase("SELECT * FROM games");
+            ArrayList gameList = db.getDataFromDatabase("SELECT * FROM games ORDER BY Id DESC");
 
             foreach (DataRow item in gameList)
             {
@@ -153,6 +201,9 @@ namespace AutoSaver
 
         private void loadSaves(string currentGame)
         {
+
+            misc.clearFlp<AutoSaver>(flpSub);
+
             ArrayList saveList = db.getDataFromDatabase("SELECT * FROM saves WHERE game_id = " + currentGame + " ORDER BY Id DESC");
 
             foreach (DataRow item in saveList)
@@ -335,6 +386,8 @@ namespace AutoSaver
             this.ShowInTaskbar = true;
             saveNotifyer.Visible = false;
         }
+
+
     }
 
 }

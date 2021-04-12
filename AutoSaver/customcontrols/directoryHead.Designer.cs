@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(directoryHead));
             this.direcPicBox = new Guna.UI.WinForms.GunaPictureBox();
             this.lblDateTime = new Guna.UI.WinForms.GunaLabel();
             this.Seperator = new Guna.UI.WinForms.GunaSeparator();
             this.btnSwap = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnDelete = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.toolTipSave = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.direcPicBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +100,7 @@
             this.btnSwap.Radius = 2;
             this.btnSwap.Size = new System.Drawing.Size(30, 30);
             this.btnSwap.TabIndex = 3;
+            this.toolTipSave.SetToolTip(this.btnSwap, "Swap this save to current save");
             // 
             // btnDelete
             // 
@@ -130,6 +133,12 @@
             this.btnDelete.Radius = 2;
             this.btnDelete.Size = new System.Drawing.Size(30, 30);
             this.btnDelete.TabIndex = 4;
+            this.toolTipSave.SetToolTip(this.btnDelete, "Delete Save");
+            // 
+            // toolTipSave
+            // 
+            this.toolTipSave.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTipSave.ToolTipTitle = "AutoSaver";
             // 
             // directoryHead
             // 
@@ -156,5 +165,6 @@
         private Guna.UI.WinForms.GunaSeparator Seperator;
         private Guna.UI.WinForms.GunaAdvenceButton btnSwap;
         private Guna.UI.WinForms.GunaAdvenceButton btnDelete;
+        private System.Windows.Forms.ToolTip toolTipSave;
     }
 }
