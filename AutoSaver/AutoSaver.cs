@@ -38,7 +38,27 @@ namespace AutoSaver
             this.Invoke(new gamesDelegate(loadGames));
         }
 
-       public Thread loadSavesThread(string currentGame)
+        public Thread loadSearchedGameThread(string search)
+        {
+
+            var t = new Thread(() => loadSearchedGamesFunc(search));
+            t.Start();
+            return t;
+        }
+
+        void loadSearchedGamesFunc(string search)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new savesDelegate(loadSearchedGamesFunc), search);
+                return;
+            }
+
+            loadSearchedGames(search);
+
+        }
+
+        public Thread loadSavesThread(string currentGame)
         {
             var t = new Thread(() => loadSavesFunc(currentGame));
             t.Start();
@@ -199,6 +219,31 @@ namespace AutoSaver
         
         }
 
+        private void loadSearchedGames(string search)
+        {
+            misc.clearFlp<gameHead>(flpMain);
+
+            ArrayList gameList = db.getDataFromDatabase("SELECT * FROM games WHERE name LIKE "+ "'%"+ search +"%'"+" ORDER BY Id DESC");
+
+            foreach (DataRow item in gameList)
+            {
+                gameHead gh = new gameHead();
+                gh.Margin = new Padding(20, 10, 10, 20);
+                gh.Name = item[0].ToString();
+                gh.picBox.Name = item[0].ToString();
+                gh.picBox.Click += new EventHandler(gh_click);
+                gh.picBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                gh.picBox.ImageLocation = item[2].ToString();
+                flpMain.Controls.Add(gh);
+
+                if (gh.Name == currentGame)
+                {
+                    gh.colorSelect = Color.Red;
+                };
+
+            }
+        }
+
         private void loadSaves(string currentGame)
         {
 
@@ -301,8 +346,9 @@ namespace AutoSaver
         {
             if (e.KeyCode == Keys.Enter)
             {
-              
-               
+                loadSearchedGamesFunc(txtSearch.Text);
+
+
             }
         }
 
