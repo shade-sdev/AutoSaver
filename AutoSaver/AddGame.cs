@@ -35,17 +35,26 @@ namespace AutoSaver
 
         private void btnSearchGame_Click(object sender, EventArgs e)
         {
-            autoComplete.Clear();
 
-            igdb ig = new igdb();
-            dynamic response = ig.getIgdbResponse("https://api.igdb.com/v4/games/", constants.clientId, constants.accessToken, "fields *; search \""+ txtGameName.Text +"\";");
-            foreach (dynamic res in response)
+            if (constants.clientId == string.Empty || constants.accessToken == string.Empty)
             {
-                string game = res["name"] + "*" + res["id"];
-                autoComplete.Add(game);
+
+            }else
+            {
+
+                autoComplete.Clear();
+
+                igdb ig = new igdb();
+                dynamic response = ig.getIgdbResponse("https://api.igdb.com/v4/games/", constants.clientId, constants.accessToken, "fields *; search \"" + txtGameName.Text + "\";");
+                foreach (dynamic res in response)
+                {
+                    string game = res["name"] + "*" + res["id"];
+                    autoComplete.Add(game);
+                }
+
+                MessageBox.Show("Results has been added to the textbox, press spacebar or clear and type again");
             }
 
-            MessageBox.Show("Results has been added to the textbox, press spacebar or clear and type again");
 
         }
 
