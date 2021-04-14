@@ -25,7 +25,8 @@ namespace AutoSaver
 
         private void AutoSaver_Load(object sender, EventArgs e)
         {
-
+            this.txtSearch.GotFocus += searchBoxOnFocus;
+            this.txtSearch.LostFocus += searchBoxLostFocus;
             flpMain.Padding = new Padding(13, 0, 13, 0);
 
             loadGamesFunc();
@@ -431,6 +432,23 @@ namespace AutoSaver
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
             saveNotifyer.Visible = false;
+
+            if (currentGame != string.Empty)
+            {
+                loadSavesFunc(currentGame);
+            }
+        }
+
+        private void searchBoxLostFocus(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == string.Empty)
+                txtSearch.Text = "Search..";
+        }
+
+        private void searchBoxOnFocus(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search.." && txtSearch.Text != string.Empty)
+                txtSearch.Text = null;
         }
 
 

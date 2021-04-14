@@ -8,8 +8,8 @@ namespace AutoSaver
 {
     class constants
     {
-       // public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.CurrentDirectory + @"\AutoSaver.mdf;Integrated Security=True";
-       public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Shade\source\repos\AutoSaver\AutoSaver\AutoSaver.mdf;Integrated Security=True";
+       public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.CurrentDirectory + @"\AutoSaver.mdf;Integrated Security=True";
+       //public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Shade\source\repos\AutoSaver\AutoSaver\AutoSaver.mdf;Integrated Security=True";
         public static string clientId = "lhf9av4jg9c5i1tz00lc9pq4nq2rwh";
         public static string accessToken = "Bearer o6zbmtqlkhr6dd0gbiw3zk7xmh5ks0";
         public static string secret = "";
