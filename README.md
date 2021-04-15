@@ -50,7 +50,7 @@
 
 <img src="https://i.imgur.com/c7QDEKo.png" width="1200px" height="600px">
 
-**The aim of this project was to build an alternative for people who still uses notepad files for saving their passwords. Password's are stored on the user's machine and are encrypted.*
+**The aim of this project was to build an automated game save backup system, which would backup your save files everytime a game process is ended, provided that this game is including in AutoSaver.*
 
 
 ### Built With
@@ -67,7 +67,7 @@ Download the installer from the release section of this project: https://github.
 
 ### Prerequisites
 
-Can download them here, but they will be downloaded via the installer also.
+Both Prerequisites will be downloaded when installing AutoSaver.
 * [.NET Framework 4.8](https://download.visualstudio.microsoft.com/download/pr/7afca223-55d2-470a-8edc-6a1739ae3252/abd170b4b0ec15ad0222a809b761a036/ndp48-x86-x64-allos-enu.exe)
 * [Microsoft SQL Server 2016 LocalDB](https://download.microsoft.com/download/4/1/A/41AD6EDE-9794-44E3-B3D5-A1AF62CD7A6F/sql16_sp2_dlc/en-us/SqlLocalDB.msi)
 
@@ -77,9 +77,9 @@ Can download them here, but they will be downloaded via the installer also.
 
 1. Install & Run
 <br>
-2. Register <br> <img src="https://i.imgur.com/IIGjOju.png">
+2. Create a folder where you would like to AutoSaver to backup your saves, then select this folder<br> <img src="https://i.imgur.com/jwTKfdm.png">
 <br>
-3. Login with password use to register <br>  <img src="https://i.imgur.com/fC7ju3e.png">
+3. If you want to use igdb api, for search games, <a href="https://dev.twitch.tv/console/apps/create" target="_blank">Register</a> an application, then <a href="https://dev.twitch.tv/console/apps" target="_blank">Manage</a> that application to get your clientid and secret <br>  <img src="https://i.imgur.com/fC7ju3e.png">
 <br>
 4. Add Credential by clicking on the blue plus(+) button <br>  <img src="https://i.imgur.com/gCkyP5D.png">
 <br>
@@ -106,7 +106,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Shade 
 
-Project Link: https://github.com/shade-sdev/AutoSaver](https://github.com/shade-sdev/AutoSaver)
+Project Link: [https://github.com/shade-sdev/AutoSaver](https://github.com/shade-sdev/AutoSaver)
 
 
 
