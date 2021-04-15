@@ -63,7 +63,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Download the installer from the release section of this project: https://github.com/shade-sdev/PassCrypt/releases/download/1.0-rc/PassCrypt_Installer.zip
+Download the installer from the release section of this project: 
 
 ### Prerequisites
 
