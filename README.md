@@ -91,7 +91,7 @@ Both Prerequisites will be downloaded when installing AutoSaver.
 <br>
 8. Type on the search bar, then press enter to search for a game.
 <br>
-9. When you click on a game, on the left pane its save will appear.
+9. When you click on a game, on the left pane its saves will appear.
 <br>
 10. Click on the swap button on any save, to swap it with the current save file of the selected game.
 <br> 
