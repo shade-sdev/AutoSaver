@@ -50,7 +50,7 @@
 
 <img src="https://i.imgur.com/c7QDEKo.png" width="1200px" height="600px">
 
-**The aim of this project was to build an automated game save backup system, which would backup your save files everytime a game process is ended, provided that this game is including in AutoSaver.*
+**The aim of this project was to build an automated game save backup system, which would backup your save files everytime a game process is ended, provided that this game is included on AutoSaver.*
 
 
 ### Built With
