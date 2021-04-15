@@ -48,7 +48,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="https://i.imgur.com/c7QDEKo.png" width="1200px" height="800px">
+<img src="https://i.imgur.com/c7QDEKo.png" width="1200px" height="600px">
 
 **The aim of this project was to build an alternative for people who still uses notepad files for saving their passwords. Password's are stored on the user's machine and are encrypted.*
 
