@@ -31,13 +31,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/shade-sdev/AutoSaver">
-    <img src="https://i.imgur.com/o0jzbiO.png" alt="Logo" width="80" height="80">
+    <img src="https://i.imgur.com/Dfx3Omn.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">PassCrypt</h3>
+  <h3 align="center">AutoSaver</h3>
 
   <p align="center">
-    Password Manager
+    Save Backup Application
     <br />
  
   </p>
