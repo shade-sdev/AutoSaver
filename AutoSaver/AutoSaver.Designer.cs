@@ -51,6 +51,7 @@
             this.gunaDragControl5 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.saveNotifyer = new System.Windows.Forms.NotifyIcon(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.lblSaves = new Guna.UI.WinForms.GunaLabel();
             this.savesPanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +63,7 @@
             // savesPanel
             // 
             this.savesPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(37)))));
+            this.savesPanel.Controls.Add(this.lblSaves);
             this.savesPanel.Controls.Add(this.flpSub);
             this.savesPanel.Controls.Add(this.btnSettings);
             this.savesPanel.Location = new System.Drawing.Point(0, 0);
@@ -298,11 +300,11 @@
             this.lblAllGames.AutoSize = true;
             this.lblAllGames.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAllGames.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblAllGames.Location = new System.Drawing.Point(33, 63);
+            this.lblAllGames.Location = new System.Drawing.Point(35, 63);
             this.lblAllGames.Name = "lblAllGames";
-            this.lblAllGames.Size = new System.Drawing.Size(106, 30);
+            this.lblAllGames.Size = new System.Drawing.Size(76, 30);
             this.lblAllGames.TabIndex = 0;
-            this.lblAllGames.Text = "All Games";
+            this.lblAllGames.Text = "Games";
             // 
             // gunaDragControl1
             // 
@@ -337,6 +339,17 @@
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "AutoSaver";
             // 
+            // lblSaves
+            // 
+            this.lblSaves.AutoSize = true;
+            this.lblSaves.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaves.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblSaves.Location = new System.Drawing.Point(35, 63);
+            this.lblSaves.Name = "lblSaves";
+            this.lblSaves.Size = new System.Drawing.Size(65, 30);
+            this.lblSaves.TabIndex = 8;
+            this.lblSaves.Text = "Saves";
+            // 
             // AutoSaver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +365,7 @@
             this.Load += new System.EventHandler(this.AutoSaver_Load);
             this.Resize += new System.EventHandler(this.AutoSaver_Resize);
             this.savesPanel.ResumeLayout(false);
+            this.savesPanel.PerformLayout();
             this.gamePanel.ResumeLayout(false);
             this.gamePanel.PerformLayout();
             this.ResumeLayout(false);
@@ -381,6 +395,7 @@
         private System.Windows.Forms.NotifyIcon saveNotifyer;
         private System.Windows.Forms.ToolTip toolTip;
         private Guna.UI.WinForms.GunaButton btnManualBackup;
+        private Guna.UI.WinForms.GunaLabel lblSaves;
     }
 }
 
