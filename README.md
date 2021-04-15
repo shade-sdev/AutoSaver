@@ -77,20 +77,32 @@ Both Prerequisites will be downloaded when installing AutoSaver.
 
 1. Install & Run
 <br>
-2. Create a folder where you would like to AutoSaver to backup your saves, then select this folder<br> <img src="https://i.imgur.com/jwTKfdm.png">
+2. Create a folder where you would like to AutoSaver to backup your saves, then select this folder<br><br> <img src="https://i.imgur.com/jwTKfdm.png">
 <br>
-3. If you want to use igdb api, for search games, <a href="https://dev.twitch.tv/console/apps/create" target="_blank">Register</a> an application, then <a href="https://dev.twitch.tv/console/apps" target="_blank">Manage</a> that application to get your clientid and secret <br>  <img src="https://i.imgur.com/fC7ju3e.png">
+3. If you want to use igdb api, for searching games, <a href="https://dev.twitch.tv/console/apps/create" target="_blank">Register</a> an application, then <a href="https://dev.twitch.tv/console/apps" target="_blank">Manage</a> that application to get your clientid and secret, enter your clientid and secret on the setting window, then click on the ticket button to get your access token <br><br>  <img src="https://i.imgur.com/LfxlSiX.png">
 <br>
-4. Add Credential by clicking on the blue plus(+) button <br>  <img src="https://i.imgur.com/gCkyP5D.png">
+4. Add a Game by clicking on the folder icon with a + sign, fill the form and click submit <br><br>  <img src="https://i.imgur.com/VWlRuRX.png">
 <br>
-5. Select a Credential then click on the edit button to update it <br> <img src="https://i.imgur.com/beJuFLF.png">
+5. Select a Game then click on the edit button to update it <br><br> <img src="https://i.imgur.com/T8tWwyU.png">
 <br>
-6. Select a Credential then click on the delete button to move it to the trash, you can then click on trash, select any credential from there and click on restore to move it to the All items section<br>
-7. Select a Credential then click on the star icon to add it to the favourites section, click on the star icon again to remove it from the favourites icon. Notice the icon change from white to yellow when you select a credential <br> <img src="https://i.imgur.com/ds8whye.png"><br>
-8. Click on export to export a backup of all your credentials on your desktop<br>
-9. Click on import to select an exported csv file from either google chrome or passcrypt.<br>
+6. Select a Game then click on the delete button to delete it <br><br> <img src="https://i.imgur.com/mcxMKLc.png.png">
+<br>
+7. Select a Game then click on the fourth icon to manually backup its save file <br><br> <img src="https://i.imgur.com/WAlCwwv.png">
+<br>
+8. Type on the search bar, then press enter to search for a game.
+<br>
+9. When you click on a game, on the left pane its save will appear.
+<br>
+10. Click on the swap button on any save, to swap it with the current save file of the selected game.
+<br> 
+11. Click on the X button on any save, to delete this save.
+<br>
+12. Minimizing the AutoSaver makes it go to the system tray.
+<br>
+13. Each time a save is backup, a notification will appear, both for manual and automatic backup.<br>
+14. A description is given when you hover on most buttons, labels and textboxes.<br>
 
-Note: Website icon url is optional, if you leave this blank, the program will try to use the website's favicon as image.
+
 
 
 
