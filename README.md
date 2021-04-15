@@ -37,7 +37,7 @@
   <h3 align="center">AutoSaver</h3>
 
   <p align="center">
-    Save Backup Application
+    Automatic Save Backup Application
     <br />
  
   </p>
