@@ -63,7 +63,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Download the installer from the release section of this project: 
+Download the installer from the release section of this project: https://github.com/shade-sdev/AutoSaver/releases/download/0.4/AutoSaver_Installer.zip
 
 ### Prerequisites
 
